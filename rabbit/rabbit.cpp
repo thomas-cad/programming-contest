@@ -37,7 +37,6 @@ int main() {
 
     vector<pair<int, int>> todo = {start};
     seen[start.first][start.second] = true;
-
     path[start.first][start.second] = {-1, -1};
 
     for (size_t id = 0; id < todo.size(); id++){
@@ -48,12 +47,12 @@ int main() {
             int ni = ci + DI[k];
             int nj = cj + DJ[k];
 
-            if (ni >= 0 && ni < R && nj >= 0 && nj < C   // dans la grille
+            if (ni >= 0 && ni < R && nj >= 0 && nj < C     // dans la grille
                 && garden[ni][nj]                          // pas un mur
                 && !seen[ni][nj]) {                        // pas déjà visité
 
                 seen[ni][nj] = true;
-                path[ni][nj] = {ci, cj};           // on mémorise d'où on vient
+                path[ni][nj] = {ci, cj};                   // on mémorise d'où on vient
                 todo.push_back({ni, nj});
             }
         }
